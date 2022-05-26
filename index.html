@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Gun Man Game</title>
+  
+</head>
+
+<body>
+
+    <div class="container">
+        <button id="startBtn">Start Game</button>
+        <p>Player 1 - Won : <span id="p1woncnt">0</span> </p>
+        <p>Player 2 - Won : <span id="p2woncnt">0</span> </p>
+    </div>
+
+    <div class="playerCont">
+        <div class="box1">
+            <img id="p1" src="man.png" alt="">
+            <img class="bullet bullet1" id="bullet1" src="bullet.png" alt="">
+            <p>Player 1 Health</p>
+            <input type="range" name="" id="p1Health" disabled="true"  min="0" max="100" value="100">
+            <button style="display: none;" id="p1fire">Fire</button>
+        </div>
+        <div class="box2">
+            <img id="p2" src="leftman.png"  alt="">
+            <img class="bullet bullet2" id="bullet2" src="bullet.png" alt="">
+            <p>Player 2 Health</p>
+            <input type="range" name="" id="p2Health" disabled="true" min="0" max="100"  value="100">
+            <button style="display: none;" id="p2fire">Fire</button>
+        </div>
+    </div>
+
+    <p  id="gameStatus"></p>
+
+
+</body>
+
+</html>

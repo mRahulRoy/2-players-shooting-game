@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test canvas</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .playerCont {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            position: relative;
+          
+        }
+
+        .playerCont img {
+            width: 140px;
+            
+        }
+
+        #gameStatus{
+           
+            width: 25%;
+            text-align: center;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: white;
+            border-radius: 5px ;
+            background-color: rgb(58, 180, 180);
+        }
+      
+        .playerCont .animatep1 {
+            animation: move1 .5s ;
+        }
+        .playerCont .animatep2 {
+            animation: move2 .5s ;
+        }
+  
+        @keyframes move1 {
+            10% {
+                transform: translate(-1px, -1px);
+            }
+            40% {
+                transform: translate(-1px, -1px) rotate(-10deg);
+            }
+             
+
+        }
+        @keyframes move2 {
+            10% {
+                transform: translate(1px, 1px);
+            }
+            40% {
+                transform: translate(1px, 1px) rotate(10deg);
+            }
+
+        }
+      
+
+        .playerCont .bullet {
+            width: 35px;
+            height: 35px;
+            position: absolute;
+            transition: .3s ease-in-out linear;
+        }
+
+        .playerCont .bullet1 {
+            top: 7%;
+            transform: rotate(90deg);
+            left: 32%;
+            display: none;
+
+        }
+
+        .playerCont .bullet2 {
+            top: 7%;
+            transform: scale(-1) rotate(90deg);
+            right: 32%;
+            display: none;
+
+        }
+
+        .box1,
+        .box2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .playerCont button {
+            width: 60px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <button id="startBtn">Start Game</button>
+        <p>Player 1 - Won : <span id="p1woncnt">0</span> </p>
+        <p>Player 2 - Won : <span id="p2woncnt">0</span> </p>
+    </div>
+
+    <div class="playerCont">
+        <div class="box1">
+            <img id="p1" src="./images/man.png" alt="">
+            <img class="bullet bullet1" id="bullet1" src="./images/bullet.png" alt="">
+            <p>Player 1 Health</p>
+            <input type="range" name="" id="p1Health" disabled="true"  min="0" max="100" value="100">
+            <button style="display: none;" id="p1fire">Fire</button>
+        </div>
+        <div class="box2">
+            <img id="p2" src="./images/leftman.png"  alt="">
+            <img class="bullet bullet2" id="bullet2" src="./images/bullet.png" alt="">
+            <p>Player 2 Health</p>
+            <input type="range" name="" id="p2Health" disabled="true" min="0" max="100"  value="100">
+            <button style="display: none;" id="p2fire">Fire</button>
+        </div>
+    </div>
+
+    <p  id="gameStatus"></p>
+
+
+
+    <script src="./JS/index.js"></script>
+</body>
+
+</html>

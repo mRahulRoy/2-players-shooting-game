@@ -1,0 +1,93 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.playerCont {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    position: relative;
+  
+}
+
+.playerCont img {
+    width: 140px;
+    
+}
+
+#gameStatus{
+   
+    width: 25%;
+    text-align: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    border-radius: 5px ;
+    background-color: rgb(58, 180, 180);
+}
+
+.playerCont .animatep1 {
+    animation: move1 .5s ;
+}
+.playerCont .animatep2 {
+    animation: move2 .5s ;
+}
+
+@keyframes move1 {
+    10% {
+        transform: translate(-1px, -1px);
+    }
+    40% {
+        transform: translate(-1px, -1px) rotate(-10deg);
+    }
+     
+
+}
+@keyframes move2 {
+    10% {
+        transform: translate(1px, 1px);
+    }
+    40% {
+        transform: translate(1px, 1px) rotate(10deg);
+    }
+
+}
+
+
+.playerCont .bullet {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    transition: .3s ease-in-out linear;
+}
+
+.playerCont .bullet1 {
+    top: 7%;
+    transform: rotate(90deg);
+    left: 32%;
+    display: none;
+
+}
+
+.playerCont .bullet2 {
+    top: 7%;
+    transform: scale(-1) rotate(90deg);
+    right: 32%;
+    display: none;
+
+}
+
+.box1,
+.box2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.playerCont button {
+    width: 60px;
+}
